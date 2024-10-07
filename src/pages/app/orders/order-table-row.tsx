@@ -15,7 +15,7 @@ import { TableCell, TableRow } from '@/components/ui/table'
 import { queryClient } from '@/lib/react-query'
 
 import { OrderDetails } from './order-details'
-import { OrderStatus } from './order-status'
+import { OrderStatus, OrderStatusType } from './order-status'
 export interface OrderTableRowProps {
   order: {
     orderId: string
@@ -29,7 +29,7 @@ export interface OrderTableRowProps {
 export function OrderTableRow({ order }: OrderTableRowProps) {
   const [isDetailsOpen, setIsDetailsOpen] = useState(false)
 
-  function updateOrderStatusOnCache(orderId: string, status: OrderStatus) {
+  function updateOrderStatusOnCache(orderId: string, status: OrderStatusType) {
     const ordersListCache = queryClient.getQueriesData<GetOrdersResponse>({
       queryKey: ['orders'],
     })
