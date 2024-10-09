@@ -14,7 +14,7 @@ test('sign up successfully', async ({ page }) => {
   await page.getByLabel('Seu celular').fill('61981818282')
   await page.getByRole('button', { name: 'Finalizar cadastro' }).click()
   const toast = page.getByText('Estabelecimento cadastrado com sucesso')
-  expect(toast).toBeVisible()
+  await expect(toast).toBeVisible()
 })
 
 test('sign up with wrong data', async ({ page }) => {
@@ -25,6 +25,6 @@ test('sign up with wrong data', async ({ page }) => {
   await page.getByLabel('Seu celular').fill('61981818282')
   await page.getByRole('button', { name: 'Finalizar cadastro' }).click()
   const toast = page.getByText('Erro ao cadastrar restaurante')
-  expect(toast).toBeVisible()
+  await expect(toast).toBeVisible()
   await page.waitForTimeout(2000)
 })
