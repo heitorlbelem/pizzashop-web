@@ -46,7 +46,7 @@ export function SignUp() {
         },
       })
     } catch {
-      toast.error('Erro ao cadastra restaurante')
+      toast.error('Erro ao cadastrar restaurante')
     }
   }
 
@@ -68,7 +68,7 @@ export function SignUp() {
           </div>
           <form className="space-y-4" onSubmit={handleSubmit(handleSignUp)}>
             <div className="space-y-2">
-              <Label htmlFor="email">Nome do estabelecimento</Label>
+              <Label htmlFor="restaurantName">Nome do estabelecimento</Label>
               <Input
                 id="restaurantName"
                 type="text"
